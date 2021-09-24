@@ -1,0 +1,11 @@
+.tabla{
+    display: grid;
+    width: 0;
+    margin: 0;
+}
+
+.tabla:hover{
+    background: #fff;
+    box-shadow: 0 0 80px #fff, 0 0 80px #fff, 0 0 80px #fff;
+    
+}

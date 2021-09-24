@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscamina</title>
+    <link rel="stylesheet" href="./20-09-2021 Buscamina.css">
+    <style>
+        body{background-color:black};
+    </style>
+    
+</head>
+<body onload= bomba()>
+    <h1> <center><font face="Comic Sans MS,arial,verdana"> <font color = "white">Aqui hay 4 bombas, destapa las casillas sin explotar una </font></font></center> </h1>
+    
+    <script type="text/javascript">
+        var arregloimagenes = new Array();
+    function bomba(){
+        var i;
+        var bombaunica;
+        for(i=0; i<25; i++){
+            arregloimagenes[i] = "imagenes/casilladescubierta.jpg";
+        }
+        for(i=0;i<4; i++){
+            do{
+                bombaunica = Math.floor(Math.random()*25);
+            }while (arregloimagenes[bombaunica]!= "imagenes/casilladescubierta.jpg")
+            arregloimagenes[bombaunica] ="imagenes/bomba.jpg";
+        }
+    }
+    function volverajugar(){
+        var i;
+        for(i=0;i<25;i++){
+            document.getElementById(i).src="imagenes/casilla.jpg";
+        }
+    }
+    function img_click(imagen){
+        imagen.src=arregloimagenes[imagen.id];
+        if(arregloimagenes[imagen.id]=="imagenes/bomba.jpg"){
+            alert("Perdio\n¿quiere volver a jugar?")
+            bomba();
+            volverajugar();
+        }else{
+            //nada
+        }
+    }
+</script>
+    <table style="margin: 0 auto;">
+        <tr>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag1" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag2" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag3" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag4" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag5" onclick="img_click(this)"></td>
+        </tr>
+        <tr>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag6" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag7" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag8" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag9" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag10"onclick="img_click(this)"></td>
+        </tr>
+        <tr>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag11" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag12" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag13" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag14" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag15" onclick="img_click(this)"></td>
+        </tr>
+        <tr>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag16" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag17" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag18" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag19" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag20" onclick="img_click(this)"></td>
+        </tr>
+        <tr>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag21" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag22" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag23" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag24" onclick="img_click(this)"></td>
+            <td><img src ="imagenes/casilla.jpg" width="100" height="100" id ="imag25" onclick="img_click(this)"></td>
+        </tr>
+
+        
+    </table>
+    
+</body>
+</html>
